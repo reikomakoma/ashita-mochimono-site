@@ -1,0 +1,70 @@
+/* Hallmark · macrostructure: Letter · tone: soft · anchor hue: green 170 · nav: N1a (2 destinations) · footer: Ft1 minimal
+ * theme: custom (paper oklch(98% 0.012 90) · accent oklch(47% 0.07 170) · Zen Maru Gothic + Noto Sans JP)
+ * Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4
+ */
+@import url("tokens.css");
+
+html, body { overflow-x: clip; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.8;
+  line-break: strict;
+  letter-spacing: 0.02em;
+}
+a { color: var(--color-accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: 44rem; margin: 0 auto; padding: 0 var(--space-lg); }
+
+header.site { padding: var(--space-lg) 0; }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); }
+.brand { display: flex; align-items: center; gap: var(--space-sm); font-family: var(--font-display); font-weight: 700; color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+header.site nav a { font-size: var(--text-sm); white-space: nowrap; }
+
+.hero { padding: var(--space-2xl) 0 var(--space-xl); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; font-style: normal; line-height: 1.35; letter-spacing: 0.02em; min-width: 0; }
+h1 { font-size: var(--text-display); margin: 0 0 var(--space-lg); }
+h1 .mark { background: linear-gradient(transparent 62%, var(--color-mark-soft) 62%); }
+.lead { font-size: var(--text-lg); color: var(--color-ink-2); margin: 0 0 var(--space-lg); }
+.status { display: inline-block; font-size: var(--text-sm); font-weight: 700; color: var(--color-accent); border: 1.5px solid var(--color-accent); border-radius: 999px; padding: var(--space-xs) var(--space-md); white-space: nowrap; }
+
+.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); margin: var(--space-xl) 0; }
+.shots figure { margin: 0; }
+.shots img { border-radius: var(--radius-md); border: var(--rule-hair); }
+.shots figcaption { font-size: var(--text-sm); color: var(--color-ink-2); margin-top: var(--space-sm); text-align: center; }
+
+section { padding: var(--space-xl) 0; border-top: var(--rule-hair); }
+h2 { font-size: var(--text-display-s); margin: 0 0 var(--space-lg); }
+.letter p { margin: 0 0 var(--space-md); }
+
+.days { list-style: none; padding: 0; margin: var(--space-lg) 0; display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.days li { background: var(--color-mark-soft); border-radius: 999px; padding: var(--space-xs) var(--space-md); font-weight: 700; font-size: var(--text-sm); white-space: nowrap; }
+
+dl.points { margin: 0; }
+dl.points dt { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); margin-top: var(--space-lg); }
+dl.points dd { margin: var(--space-xs) 0 0; color: var(--color-ink-2); }
+
+.price { background: var(--color-paper-2); border-radius: var(--radius-md); padding: var(--space-lg); }
+.price p { margin: 0 0 var(--space-sm); }
+
+.faq h3 { font-size: var(--text-lg); margin: var(--space-lg) 0 var(--space-xs); }
+.faq p { margin: 0; color: var(--color-ink-2); }
+ol.steps { padding-left: 1.4em; }
+ol.steps li { margin-bottom: var(--space-xs); }
+
+footer.site { border-top: var(--rule-hair); padding: var(--space-xl) 0 var(--space-2xl); font-size: var(--text-sm); color: var(--color-ink-2); }
+footer.site .wrap { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-lg); }
+footer.site a { white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .shots { grid-template-columns: minmax(0, 1fr); max-width: 20rem; margin-inline: auto; }
+  .hero { padding-top: var(--space-xl); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
